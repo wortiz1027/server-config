@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  server-discovery-services:
+    image: wortiz1027/server-config:latest
+    container_name: server-config
+    hostname: server-config
+    restart: always
+    ports:
+      - 7070:7070
+      - 6170:6170
+    environment:
+      - CONFIG_SERVER=http://server-config:7070
+    networks:
+      - ntw_backend
+networks:
+  ntw_backend:
+    external: true

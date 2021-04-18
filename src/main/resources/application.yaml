@@ -1,0 +1,35 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: server-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.com/wortiz1027/configuration.git
+          searchPaths:
+            - '{application}'
+
+# +-----------------------------------------------------
+# |         MONITORING CONFIG
+# +-----------------------------------------------------
+management:
+  endpoints:
+    web:
+      base-path: /monitor/actuator
+      exposure:
+        include: "*"
+  server:
+    port: 6170
+
+# +-----------------------------------------------------
+# |         SPRING LOGGIN CONFIG
+# +-----------------------------------------------------
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+  pattern:
+    console: "%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
