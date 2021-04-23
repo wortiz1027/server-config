@@ -16,6 +16,9 @@ spring:
 # |         MONITORING CONFIG
 # +-----------------------------------------------------
 management:
+  endpoint:
+    metrics:
+      enabled: true
   endpoints:
     web:
       base-path: /monitor/actuator

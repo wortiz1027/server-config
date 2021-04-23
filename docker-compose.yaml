@@ -1,7 +1,7 @@
 version: '3.7'
 services:
-  server-discovery-services:
-    image: wortiz1027/server-config:latest
+  server-config:
+    image: server-config:latest
     container_name: server-config
     hostname: server-config
     restart: always
